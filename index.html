@@ -189,14 +189,58 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
 
-    <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <div class="columns is-centered has-text-centered">
           <h2 class="title is-3">Arbitrary Neural Heat field sampling</h2>
         </div>
 
-        <!-- Interpolating. -->
+        <div class="content has-text-justified">
+          <p>
+            With <span class="dnerf">Thera</span>, the same <span class="dnerf">Neural Heat Field</span> can be sampled to arbitrary resolutions.
+          </p>
+
+        </div>
+        <div class="columns is-vcentered interpolation-panel">
+          <!-- <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Start Frame</p>
+          </div> -->
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div>
+          <!-- <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">End Frame</p>
+          </div> -->
+        </div>
+        <br/>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Arbitrary Neural Heat field sampling</h2>
+        </div>
+
         <div class="content has-text-justified">
           <p>
             With <span class="dnerf">Thera</span>, the same <span class="dnerf">Neural Heat Field</span> can be sampled to arbitrary resolutions.
@@ -229,7 +273,11 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
+
+
+
+
 
 <section class="section pt-0 pb-4">
   <div class="container is-max-desktop">
@@ -265,6 +313,144 @@
             </div>
           </div>
         </div>
+
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual2/div2k_94_12/input_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/div2k_94_12/ours_cropped.jpg">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/div2k_94_12/msit_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/div2k_94_12/ours_cropped.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual2/barbara_6/input_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/barbara_6/ours_cropped.jpg">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/barbara_6/msit_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/barbara_6/ours_cropped.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual2/city1_6/input_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/city1_6/ours_cropped.jpg">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/city1_6/msit_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/city1_6/ours_cropped.jpg">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual2/div2k_3_8/input_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/div2k_3_8/ours_cropped.jpg">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/div2k_3_8/msit_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/div2k_3_8/ours_cropped.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual2/div2k_004_6/input_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/div2k_004_6/ours_cropped.jpg">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/div2k_004_6/msit_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/div2k_004_6/ours_cropped.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual2/skyscraper1_6/input_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/skyscraper1_6/ours_cropped.jpg">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/skyscraper1_6/msit_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/skyscraper1_6/ours_cropped.jpg">
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual2/skyscraper2_6/input_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/skyscraper2_6/ours_cropped.jpg">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/skyscraper2_6/msit_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/skyscraper2_6/ours_cropped.jpg">
+            </div>
+          </div>
+        </div>
+
+
+<!-- 
 
         <div class="twoitem">
           <div class="twentytwenty-container twentytwenty-container-top">
@@ -359,7 +545,7 @@
               <img src="./static/imgs/qual/div2k_35_ours_3.png">
             </div>
           </div>
-        </div>
+        </div> -->
 
 
       </div>
@@ -461,7 +647,6 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
@@ -475,15 +660,16 @@
             while being more parameter-efficient and offering strong theoretical guarantees.
           </p>
           <p>
-            <img id="method_train" width="100%" src="./static/imgs/method.png" alt="Thera method"/>
+            <img id="method_train" width="100%" src="./static/imgs/method.png" alt="Thera method" 
+            style="margin-top: 2em; margin-bottom: 2em;/>
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
 
   </div>
 </section>
+
 
 
 <section class="section">
