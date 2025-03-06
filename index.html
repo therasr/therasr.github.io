@@ -2,21 +2,39 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Thera: Aliasing-Free Arbitrary-Scale Super-Resolution with Neural Heat Fields.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="description" content="Thera offers an aliasing-free, arbitrary-scale super-resolution approach using neural heat fields.
+                                      Explore state-of-the-art results and detailed methodology.">
+  <meta name="keywords" content="Thera, Super-Resolution, Neural Heat Fields, Arbitrary Scale, Anti-aliasing, Deep Learning, Neural Radiance Fields">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://therasr.github.io/">
+  <title>Thera: Aliasing-Free Arbitrary-Scale Super-Resolution with Neural Heat Fields</title>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESZM8CZ1BH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-ESZM8CZ1BH');
-</script>
+  <meta property="og:title" content="Thera: Aliasing-Free Arbitrary-Scale Super-Resolution with Neural Heat Fields">
+  <meta property="og:description" content="Thera is super-resolution approach leverages neural heat fields for anti-aliased results.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://therasr.github.io/">
+  <meta property="og:image" content="https://therasr.github.io//static/imgs/teaser.png">
+  
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thera: Aliasing-Free Arbitrary-Scale Super-Resolution with Neural Heat Fields">
+  <meta name="twitter:description" content="Thera is super-resolution approach leverages neural heat fields for anti-aliased results.">
+  <meta name="twitter:image" content="https://yourwebsite.com/static/imgs/teaser.png">
+
+  
+
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESZM8CZ1BH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ESZM8CZ1BH');
+  </script>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -24,16 +42,34 @@
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/twentytwenty.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
+
+  <script src="./js/jquery-3.2.1.min.js"></script>
+  <script src="./js/jquery.event.move.js"></script>
+  <script src="./js/jquery.twentytwenty.js"></script>
+  <script src="./js/bulma-carousel.min.js"></script>
+  <script src="./js/bulma-slider.min.js"></script>
+  <script src="./js/fontawesome.all.min.js"></script>
+
+  <!--MathJax-->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
   <script src="./static/js/index.js"></script>
 </head>
 <body>
@@ -46,38 +82,7 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
 </nav>
-
 
 <section class="hero">
   <div class="hero-body">
@@ -87,9 +92,9 @@
           <h1 class="title is-1 publication-title">Thera: Aliasing-Free Arbitrary-Scale Super-Resolution with Neural Heat Fields</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://a1ex.dev/">Alexander Becker</a><sup>🔥</sup>,</span>
+              <a href="https://a1ex.dev/">Alexander Becker</a><sup>❄️,🔥</sup>,</span>
             <span class="author-block">
-              <a href="https://rcdaudt.github.io/">Rodrigo Caye Daudt</a><sup>🔥</sup>,</span>
+              <a href="https://rcdaudt.github.io/">Rodrigo Caye Daudt</a><sup>❄️,🔥</sup>,</span>
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=tFx8AhkAAAAJ&hl=en">Dominik Narnhofer</a><sup>🔥</sup>,
             </span>
@@ -100,16 +105,17 @@
               <a href="https://nandometzger.github.io/">Nando Metzger</a><sup>🔥</sup>,
             </span>
             <span class="author-block">
-              <a href="https://dm3l.uzh.ch/wegner/group-leader">Jan Dirk Wegner</a><sup>🌡️</sup>,
+              <a href="https://dm3l.uzh.ch/wegner/group-leader">Jan Dirk Wegner</a><sup>🌶️</sup>,
             </span>
             <span class="author-block">
               <a href="https://scholar.google.ch/citations?user=FZuNgqIAAAAJ&hl=en">Konrad Schindler</a><sup>🔥</sup>
             </span>
           </div>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>🔥</sup>Photogrammetry and Remote Sensing, ETH Zurich</span>
-            <span class="author-block"><sup>🌡️</sup>Department of Mathematical Modeling and Machine Learning, University of Zurich</span>
+          <div class="is-size-5 publication-authors footer-section">
+            <span class="author-block-footer"><sup>❄️</sup>Equal Contribution</span>
+            <span class="author-block-footer"><sup>🔥</sup>Photogrammetry and Remote Sensing, ETH Zurich</span>
+            <span class="author-block-footer"><sup>🌶️</sup>Department of Mathematical Modeling and Machine Learning, University of Zurich</span>
           </div>
 
           <div class="column has-text-centered">
@@ -135,7 +141,7 @@
               </span>
               <!-- Video Link. -->
               <!-- <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                <a href="https://arxiv.org/abs/2311.17643v2"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -165,9 +171,11 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img id="method_train" width="100%" src="./static/imgs/teaser.png" alt="Thera overview scheme"/>
+      <img id="method_train" width="100%" src="./static/imgs/teaser.png" alt="Overview of the Thera method for aliasing-free super-resolution"/>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Thermal Activations</span> create <span class="dnerf">Neural Heat Fields</span> that model exact PDEs and enable aliasing-free super-resolution.
+          <span class="dnerf">Thera</span> arbitrary-scale super-resolution methodwith a built-in physical observation model.
+          <span class="dnerf">Neural Heat Fields</span> decompose the image into sinusoidal components 
+         that can be re-sampled at the new sampling rate (i.e., resolution).
       </h2>
     </div>
   </div>
@@ -176,85 +184,279 @@
 
 
 
+
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Arbitrary Neural Heat field sampling</h2>
+    <div class="columns is-centered">
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Arbitrary Neural Heat field sampling</h2>
+        </div>
+
+        <!-- Interpolating. -->
         <div class="content has-text-justified">
           <p>
-            Recen
+            With <span class="dnerf">Thera</span>, the same <span class="dnerf">Neural Heat Field</span> can be sampled to arbitrary resolutions.
           </p>
-          <p>
-            <img id="method_train" width="100%" src="./static/imgs/method.png" alt="Thera method"/>
-          </p>
+
         </div>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Start Frame</p>
+          </div>
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div>
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">End Frame</p>
+          </div>
+        </div>
+        <br/>
       </div>
     </div>
-    <!--/ Abstract. -->
+  </div>
+</section>
 
+<section class="section pt-0 pb-4">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Gallery</h2>
+      </div>
+    </div>
   </div>
 </section>
 
 
-
-<section class="hero is-light is-small">
+<section class="hero is-light is-small mt-4">
   <div class="hero-body">
     <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
+      <div id="results-carousel-horizontal" class="carousel results-carousel">
+
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual2/div2k_13_6/input_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/div2k_13_6/ours_cropped.jpg">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/div2k_13_6/msit_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/div2k_13_6/ours_cropped.jpg">
+            </div>
+          </div>
         </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
+
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_11_bic_4.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_11_ours_4.png">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_11_ciao_4.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_11_ours_4.png">
+            </div>
+          </div>
         </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
+
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_13_bic_6.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_13_ours_6.png">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_13_ciao_6.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_13_ours_6.png">
+            </div>
+          </div>
         </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
+
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_19_bic_6.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_19_ours_6.png">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_19_ciao_6.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_19_ours_6.png">
+            </div>
+          </div>
         </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
+
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_25_ciao_2.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_25_ours_2.png">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_25_ciao_2.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_25_ours_2.png">
+            </div>
+          </div>
+        </div> 
+
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_35_bic_3.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_35_ours_3.png">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_35_ciao_3.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual/div2k_35_ours_3.png">
+            </div>
+          </div>
         </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
+
+
       </div>
     </div>
   </div>
 </section>
+<!-- 
+<section class="hero is-light is-small">
+  <div class="hero-body pt-0">
+    <div class="container">
+      <div id="results-carousel-vertical" class="carousel results-carousel">
+
+
+        
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./images/inthewild/8A10BC4E-4963-4885-8F30-8B28F3F8AB2B-78098-0000351063D6ECE7_crop43.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/inthewild/8A10BC4E-4963-4885-8F30-8B28F3F8AB2B-78098-0000351063D6ECE7_crop43_ours.jpg">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="./images/inthewild/8A10BC4E-4963-4885-8F30-8B28F3F8AB2B-78098-0000351063D6ECE7_crop43_leres.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/inthewild/8A10BC4E-4963-4885-8F30-8B28F3F8AB2B-78098-0000351063D6ECE7_crop43_ours.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./images/inthewild/DJI_0189_crop43.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/inthewild/DJI_0189_crop43_ours.jpg">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="./images/inthewild/DJI_0189_crop43_leres.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/inthewild/DJI_0189_crop43_ours.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./images/inthewild/DJI_0221-HDR_crop_crop43.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/inthewild/DJI_0221-HDR_crop_crop43_ours.jpg">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="./images/inthewild/DJI_0221-HDR_crop_crop43_leres.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/inthewild/DJI_0221-HDR_crop_crop43_ours.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./images/inthewild/DSC00058-HDR_crop43.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/inthewild/DSC00058-HDR_crop43_ours.jpg">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="./images/inthewild/DSC00058-HDR_crop43_leres.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/inthewild/DSC00058-HDR_crop43_ours.jpg">
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</section> -->
+
 
 
 <section class="section">
@@ -305,151 +507,50 @@
 
 
 
-<section class="section">
-  <div class="container is-max-desktop">
+<script>
+  $(window).on('load', function() {
+    bulmaCarousel.attach('#results-carousel-horizontal', {
+      slidesToScroll: 1,
+      slidesToShow: 3,
+      loop: true,
+      autoplay: true,
+    });
 
-    <div class="columns is-centered">
+    bulmaCarousel.attach('#results-carousel-vertical', {
+      slidesToScroll: 1,
+      slidesToShow: 5,
+      loop: true,
+      autoplay: true,
+    });
 
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
+    $(".twentytwenty-container-top").twentytwenty({
+      before_label: 'Input',
+      after_label: 'Ours',
+      default_offset_pct: 0.75,
+    });
 
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
+    $(".twentytwenty-container-bottom").twentytwenty({
+      before_label: 'MSIT',
+      after_label: 'Ours',
+      default_offset_pct: 0.5,
+    });
 
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
-  </div>
-</section>
+    $('.results-carousel').css({
+      'max-height': '2000px',
+      'visibility': 'visible'
+    });
+  });
+</script>
 
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{becker2025thera,
+  author    = {Becker, Alexander and Daudt, Rodrigo Caye and Narnhofer, Dominik and Peters, Torben and Metzger, Nando and Wegner, Jan Dirk and Schindler, Konrad},
+  title     = {hera: Aliasing-Free Arbitrary-Scale Super-Resolution with Neural Heat Fields},
+  journal   = {arXiv preprint arXiv:2311.17643},
+  year      = {2025},
 }</code></pre>
   </div>
 </section>
@@ -457,14 +558,6 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
     </div>
     <div class="columns is-centered">
       <div class="column is-8">
