@@ -173,7 +173,7 @@
     <div class="hero-body">
       <img id="method_train" width="100%" src="./static/imgs/teaser.png" alt="Overview of the Thera method for aliasing-free super-resolution"/>
       <h2 class="subtitle has-text-centered">
-          <span class="dnerf">Thera</span> arbitrary-scale super-resolution methodwith a built-in physical observation model.
+          <span class="dnerf">Thera</span> is an arbitrary-scale super-resolution method with a built-in physical observation model.
           <span class="dnerf">Neural Heat Fields</span> decompose the image into sinusoidal components 
          that can be re-sampled at the new sampling rate (i.e., resolution).
       </h2>
@@ -185,14 +185,14 @@
 
 
 
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
 
     <div class="columns is-centered">
       <div class="column is-full-width">
         <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">Arbitrary Neural Heat field sampling</h2>
+          <h2 class="title is-3">Neural Heat field sampling</h2>
         </div>
 
         <div class="content has-text-justified">
@@ -216,19 +216,87 @@
                    id="interpolation-slider"
                    step="1" min="0" max="100" value="0" type="range">
           </div>
-          <!-- <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div> -->
         </div>
         <br/>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
+
+
+<!-- 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Neural Heat field sampling</h2>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            With <span class="dnerf">Thera</span>, the same <span class="dnerf">Neural Heat Field</span> can be sampled to arbitrary resolutions with anti-aliasing guarantees.
+          </p>
+
+        </div>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-3 has-text-centered">
+            <img src="./static/imgs/zebra_input.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Input Image</p>
+          </div>
+          <div class="column is-3 interpolation-video-column">
+            <div id="interpolation-image-wrapper">Loading...</div>
+            <p id="scale-info" class="has-text-centered has-text-info"></p>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div>
+        </div>
+        <br/>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Outer columns to center the box -->
+    <div class="columns is-centered">
+      <!-- A single "narrow" column so it fits its content -->
+      <div class="column is-narrow">
+        <!-- This panel is the 'box' that adapts to content -->
+        <div class="interpolation-panel
+                    is-flex
+                    is-align-items-center
+                    p-4"
+             style="border-radius: 10px; background-color: #f5f5f5;">
+          <!-- Left side: the image -->
+          <div class="has-text-centered mr-4">
+            <img src="./static/imgs/zebra_input.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image." />
+            <p>Input Image</p>
+          </div>
+
+          <!-- Right side: the interpolation "Loading..." & slider -->
+          <div>
+            <div id="interpolation-image-wrapper">Loading...</div>
+            <p id="scale-info" class="has-text-centered has-text-info"></p>
+            <input class="slider is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- 
 <section class="section">
@@ -315,6 +383,47 @@
           </div>
         </div>
 
+
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual2/manga1_6/input_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/manga1_6/ours_cropped.jpg">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom  disable-crop">
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/manga1_6/msit_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/manga1_6/ours_cropped.jpg">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual2/jungle_4/input_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/jungle_4/ours_cropped.jpg">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/jungle_4/msit_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/jungle_4/ours_cropped.jpg">
+            </div>
+          </div>
+        </div>
+
+
         <div class="twoitem">
           <div class="twentytwenty-container twentytwenty-container-top">
             <div class="cmpcontent">
@@ -335,6 +444,8 @@
         </div>
 
         
+
+
 
         <div class="twoitem">
           <div class="twentytwenty-container twentytwenty-container-top">
@@ -375,6 +486,24 @@
           </div>
         </div>
 
+        <div class="twoitem">
+          <div class="twentytwenty-container twentytwenty-container-top">
+            <div class="cmpcontent">
+              <img src="./static/imgs/qual2/manga2_6/input_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/manga2_6/ours_cropped.jpg">
+            </div>
+          </div>
+          <div class="twentytwenty-container twentytwenty-container-bottom">
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/manga2_6/msit_cropped.jpg">
+            </div>
+            <div class="cmpcontent">
+              <img src="/static/imgs/qual2/manga2_6/ours_cropped.jpg">
+            </div>
+          </div>
+        </div>
 
         <div class="twoitem">
           <div class="twentytwenty-container twentytwenty-container-top">
@@ -385,7 +514,7 @@
               <img src="/static/imgs/qual2/city1_6/ours_cropped.jpg">
             </div>
           </div>
-          <div class="twentytwenty-container twentytwenty-container-bottom">
+          <div class="twentytwenty-container twentytwenty-container-bottom disable-crop">
             <div class="cmpcontent">
               <img src="/static/imgs/qual2/city1_6/msit_cropped.jpg">
             </div>
@@ -405,7 +534,7 @@
               <img src="/static/imgs/qual2/div2k_94_12/ours_cropped.jpg">
             </div>
           </div>
-          <div class="twentytwenty-container twentytwenty-container-bottom">
+          <div class="twentytwenty-container twentytwenty-container-bottom disable-crop">
             <div class="cmpcontent">
               <img src="/static/imgs/qual2/div2k_94_12/msit_cropped.jpg">
             </div>
@@ -536,7 +665,7 @@
       after_label: 'Ours',
       default_offset_pct: 0.5,
     });
-
+    
     $('.results-carousel').css({
       'max-height': '2000px',
       'visibility': 'visible'
