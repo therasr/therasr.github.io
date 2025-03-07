@@ -3,10 +3,13 @@ window.HELP_IMPROVE_VIDEOJS = false;
 var INTERP_BASE = "./static/interpolation/zebra";
 var NUM_INTERP_FRAMES = 40;
 
-// Declare scales globally!
+// Global arrays for images and scale values
 var interp_images = [];
-var scales = [];  // <-- You need this variable
+var scales = [];
 
+/**
+ * Preload all interpolation frames into `interp_images`.
+ */
 function preloadInterpolationImages() {
   for (var i = 0; i < NUM_INTERP_FRAMES; i++) {
     var path = INTERP_BASE + '/' + String(i).padStart(6, '0') + '.jpg';
@@ -15,7 +18,9 @@ function preloadInterpolationImages() {
   }
 }
 
-// This function will load the JSON mapping
+/**
+ * Load mapping.json to fill the `scales` array with frame-specific scale values.
+ */
 function loadMapping() {
   var mappingPath = INTERP_BASE + '/mapping.json';
   return fetch(mappingPath)
@@ -26,15 +31,14 @@ function loadMapping() {
       return response.json();
     })
     .then(mapping => {
-      // mapping is an array of objects like:
-      // [
-      //   { "old_filename": "13_zebra_2.3456.png", "new_filename": "000000.jpg", "scale": "2.3456" },
-      //   { ... },
-      //   ...
-      // ]
-      // We'll assume the i-th entry's "new_filename" is i-th frame.
+      // Example mapping entry:
+      // {
+      //   "old_filename": "13_zebra_2.3456.png",
+      //   "new_filename": "000000.jpg",
+      //   "scale": "2.3456"
+      // }
       for (let i = 0; i < mapping.length; i++) {
-        scales[i] = mapping[i].scale;
+        scales[i] = mapping[i].scale; 
       }
     })
     .catch(err => {
@@ -42,102 +46,46 @@ function loadMapping() {
     });
 }
 
-
+/**
+ * Display the i-th preloaded image and update the scale text.
+ */
 function setInterpolationImage(i) {
   var image = interp_images[i];
   image.ondragstart = function() { return false; };
   image.oncontextmenu = function() { return false; };
   $('#interpolation-image-wrapper').empty().append(image);
 
-  // Also set the scale text
-  // e.g. "Scale = 2.3456"
-  // If we haven’t loaded the mapping yet or no scale for i, show something else
-  var scaleText = scales[i] || "Scale unknown";
-  $('#scale-info').text("Scale: " + scaleText);
+  // If we have a valid scale, parse and format it to 4 significant digits.
+  var scaleValue = parseFloat(scales[i]);
+  var formattedScale = !isNaN(scaleValue) ? scaleValue.toPrecision(4) : "unknown";
+  
+  $('#scale-info').text("Scale: " + formattedScale);
 }
 
-
 $(document).ready(function() {
-  // ... your existing code ...
-
-  // 1) Preload images immediately
+  // 1) Preload images
   preloadInterpolationImages();
 
-  // 2) Load mapping (returns a promise)
+  // 2) Load mapping.json, then set the initial frame
   loadMapping().then(() => {
-    // Once the mapping is loaded, set the default image & scale
     setInterpolationImage(0);
   });
 
-  // 3) Configure slider
+  // 3) Configure the slider
   $('#interpolation-slider')
     .prop('max', NUM_INTERP_FRAMES - 1)
-    .on('input', function(event) {
+    .on('input', function() {
       setInterpolationImage(this.value);
     });
 
-  // Make sure we show at least the 0th frame if JSON fails or not loaded yet
+  // Show the 0th frame in case mapping.json fails or is slow
   setInterpolationImage(0);
 
-  // ... the rest of your setup code ...
+  // 4) Auto-cycle the slider
+  var cycleSpeed = 50; // ms between frames
+  setInterval(function() {
+    var currentVal = Number($('#interpolation-slider').val());
+    var nextVal = (currentVal + 1) % NUM_INTERP_FRAMES;
+    $('#interpolation-slider').val(nextVal).trigger('input');
+  }, cycleSpeed);
 });
-
-
-
-
-// $(document).ready(function() {
-//     // Check for click events on the navbar burger icon
-//     $(".navbar-burger").click(function() {
-//       // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-//       $(".navbar-burger").toggleClass("is-active");
-//       $(".navbar-menu").toggleClass("is-active");
-
-//     });
-
-//     var options = {
-// 			slidesToScroll: 1,
-// 			slidesToShow: 3,
-// 			loop: true,
-// 			infinite: true,
-// 			autoplay: false,
-// 			autoplaySpeed: 3000,
-//     }
-
-// 		// Initialize all div with carousel class
-//     var carousels = bulmaCarousel.attach('.carousel', options);
-
-//     // Loop on each carousel initialized
-//     for(var i = 0; i < carousels.length; i++) {
-//     	// Add listener to  event
-//     	carousels[i].on('before:show', state => {
-//     		console.log(state);
-//     	});
-//     }
-
-//     // Access to bulmaCarousel instance of an element
-//     var element = document.querySelector('#my-element');
-//     if (element && element.bulmaCarousel) {
-//     	// bulmaCarousel instance is available as element.bulmaCarousel
-//     	element.bulmaCarousel.on('before-show', function(state) {
-//     		console.log(state);
-//     	});
-//     }
-
-//     /*var player = document.getElementById('interpolation-video');
-//     player.addEventListener('loadedmetadata', function() {
-//       $('#interpolation-slider').on('input', function(event) {
-//         console.log(this.value, player.duration);
-//         player.currentTime = player.duration / 100 * this.value;
-//       })
-//     }, false);*/
-//     preloadInterpolationImages();
-
-//     $('#interpolation-slider').on('input', function(event) {
-//       setInterpolationImage(this.value);
-//     });
-//     setInterpolationImage(0);
-//     $('#interpolation-slider').prop('max', NUM_INTERP_FRAMES - 1);
-
-//     bulmaSlider.attach();
-
-// })

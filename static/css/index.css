@@ -283,3 +283,14 @@ body {
 #interpolation-image-wrapper {
   width: 100%;
 }
+
+#scale-info {
+  font-size: 1.2em;
+}
+
+
+.interpolation-image,
+#interpolation-image-wrapper img {
+  max-width: 300px; /* or any desired width */
+  height: auto;     /* keep aspect ratio */
+}
