@@ -16,17 +16,18 @@
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://therasr.github.io/">
   <meta property="og:image" content="https://therasr.github.io//static/imgs/teaser.png">
-  
+
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Thera: Aliasing-Free Arbitrary-Scale Super-Resolution with Neural Heat Fields">
   <meta name="twitter:description" content="Thera is super-resolution approach leverages neural heat fields for anti-aliased results.">
   <meta name="twitter:image" content="https://yourwebsite.com/static/imgs/teaser.png">
 
-  
+
 
 
   <!-- Google tag (gtag.js) -->
+  <!--
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESZM8CZ1BH"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -35,6 +36,7 @@
 
     gtag('config', 'G-ESZM8CZ1BH');
   </script>
+  -->
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -53,7 +55,7 @@
   <script src="./js/jquery-3.2.1.min.js"></script>
   <script src="./js/jquery.event.move.js"></script>
   <script src="./js/jquery.twentytwenty.js"></script>
-  <script src="./js/bulma-carousel.min.js"></script>
+  <script src="./js/bulma-carousel.js"></script>
   <script src="./js/bulma-slider.min.js"></script>
   <script src="./js/fontawesome.all.min.js"></script>
 
@@ -131,7 +133,7 @@
                 </a>
               </span> -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2311.17643v2"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -174,14 +176,14 @@
       <img id="method_train" width="100%" src="./static/imgs/teaser.png" alt="Overview of the Thera method for aliasing-free super-resolution"/>
       <h2 class="subtitle has-text-centered">
           <span class="dnerf">Thera</span> is an arbitrary-scale super-resolution method with a built-in physical observation model.
-          <span class="dnerf">Neural Heat Fields</span> decompose the image into sinusoidal components 
+          <span class="dnerf">Neural Heat Fields</span> decompose the image into sinusoidal components
          that can be re-sampled at the new sampling rate (i.e., resolution).
       </h2>
     </div>
   </div>
 </section>
 
-
+<!--
 <section class="section pt-0 pb-4">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -219,7 +221,7 @@
     </div>
   </div>
 </section>
-
+-->
 
 
 
@@ -320,7 +322,7 @@
           </div>
         </div>
 
-        
+
 
 
 
@@ -420,7 +422,7 @@
             </div>
           </div>
         </div>
-        
+
 
         <div class="twoitem">
           <div class="twentytwenty-container twentytwenty-container-top">
@@ -474,7 +476,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Recent approaches to arbitrary-scale single image super-resolution (ASR) use neural fields to represent continuous signals that can be sampled at arbitrary resolutions. 
+            Recent approaches to arbitrary-scale single image super-resolution (ASR) use neural fields to represent continuous signals that can be sampled at arbitrary resolutions.
             However, point-wise queries of neural fields do not naturally match the point spread function (PSF) of pixels, which may cause aliasing in the super-resolved image.
             Existing methods attempt to mitigate this by approximating an integral version of the field at each scaling factor, compromising both fidelity and generalization.
             In this work, we introduce neural heat fields, a novel neural field formulation that inherently models a physically exact PSF. Our formulation enables analytically correct anti-aliasing at any desired output resolution, and - unlike supersampling - at no additional cost.
@@ -482,7 +484,7 @@
             while being more parameter-efficient and offering strong theoretical guarantees.
           </p>
           <p>
-            <img id="method_train" width="100%" src="./static/imgs/method.png" alt="Thera method" 
+            <img id="method_train" width="100%" src="./static/imgs/method.png" alt="Thera method"
             style="margin-top: 2em; margin-bottom: 2em;/>
           </p>
         </div>
@@ -498,7 +500,7 @@
   <div class="container is-max-desktop">
     <!-- Paper results. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-four-fifths" style="width: 100%;">
         <h2 class="title is-3">Results</h2>
         <div class="content has-text-justified">
           <p>
@@ -521,14 +523,14 @@
       slidesToScroll: 1,
       slidesToShow: 3,
       loop: true,
-      autoplay: true,
+      autoplay: false,
     });
 
     bulmaCarousel.attach('#results-carousel-vertical', {
       slidesToScroll: 1,
       slidesToShow: 5,
       loop: true,
-      autoplay: true,
+      autoplay: false,
     });
 
     $(".twentytwenty-container-top").twentytwenty({
@@ -542,7 +544,7 @@
       after_label: 'Ours',
       default_offset_pct: 0.5,
     });
-    
+
     $('.results-carousel').css({
       'max-height': '2000px',
       'visibility': 'visible'
@@ -554,12 +556,7 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{becker2025thera,
-  author    = {Becker, Alexander and Daudt, Rodrigo Caye and Narnhofer, Dominik and Peters, Torben and Metzger, Nando and Wegner, Jan Dirk and Schindler, Konrad},
-  title     = {hera: Aliasing-Free Arbitrary-Scale Super-Resolution with Neural Heat Fields},
-  journal   = {arXiv preprint arXiv:2311.17643},
-  year      = {2025},
-}</code></pre>
+    <pre><code>Citation coming soon.</code></pre>
   </div>
 </section>
 
