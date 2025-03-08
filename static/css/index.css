@@ -179,6 +179,20 @@ body {
     position: relative;
 }
 
+#results-carousel-horizontal .twentytwenty-wrapper {
+}
+
+#results-carousel-horizontal .twoitem {
+    background-color: transparent;
+    border: none;
+    gap: 10px;
+    border: 1px solid #bbb;
+}
+
+#gallery .hero-body {
+    padding-bottom: 0 !important;
+}
+
 #results-carousel-vertical .twentytwenty-container {
     aspect-ratio: 0.75;
 }
