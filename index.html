@@ -230,7 +230,11 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Gallery</h2>
+        <h2 class="title is-3 is-spaced">Gallery</h2>
+        <h2 class="subtitle has-text-centered">
+            <span class="dnerf">First row:</span> Comparison between input image and our super-resolved result.<br>
+            <span class="dnerf">Second row:</span> Comparison between a SOTA competitor (MSIT) and ours.
+        </h2>
       </div>
     </div>
   </div>
@@ -536,7 +540,7 @@
     $(".twentytwenty-container-top").twentytwenty({
       before_label: 'Input',
       after_label: 'Ours',
-      default_offset_pct: 0.75,
+      default_offset_pct: 0.5,
     });
 
     $(".twentytwenty-container-bottom").twentytwenty({

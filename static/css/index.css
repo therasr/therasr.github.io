@@ -197,6 +197,31 @@ body {
     aspect-ratio: 0.75;
 }
 
+.twentytwenty-overlay {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.twentytwenty-overlay:hover {
+    background: rgba(0, 0, 0, 0) !important;
+}
+
+.twentytwenty-overlay .twentytwenty-after-label {
+    opacity: 1 !important;
+}
+
+.twentytwenty-overlay .twentytwenty-after-label::before {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.twentytwenty-overlay .twentytwenty-before-label {
+    opacity: 1 !important;
+}
+
+.twentytwenty-overlay .twentytwenty-before-label::before {
+    background: rgba(0, 0, 0, 0.5);
+}
+
 /* Ensure .cmpcontent stretches inside the container */
 .twentytwenty-container .cmpcontent {
     width: 100%;
