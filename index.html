@@ -91,7 +91,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Thera: Aliasing-Free Arbitrary-Scale Super-Resolution with Neural Heat Fields</h1>
+          <h1 class="title is-1 is-size-3-mobile publication-title">Thera: Aliasing-Free Arbitrary-Scale Super-Resolution with Neural Heat Fields</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://a1ex.dev/">Alexander Becker</a><sup>❄️,🔥</sup>,</span>
@@ -176,8 +176,6 @@
       <img id="method_train" width="100%" src="./static/imgs/teaser.png" alt="Overview of the Thera method for aliasing-free super-resolution"/>
       <h2 class="subtitle has-text-centered">
           <span class="dnerf">Thera</span> is the first arbitrary-scale super-resolution method with a built-in physical observation model.
-          <span class="dnerf">Neural Heat Fields</span> decompose the image into sinusoidal components
-         and automatically attenuate them to achieve anti-aliasing at the new sampling rate (i.e., resolution).
       </h2>
     </div>
   </div>
@@ -230,11 +228,10 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3 is-spaced">Gallery</h2>
-        <h2 class="subtitle has-text-centered">
-            <span class="dnerf">First row:</span> Comparison between input image and our super-resolved result.<br>
-            <span class="dnerf">Second row:</span> Comparison between a SOTA competitor (MSIT) and ours.
-        </h2>
+        <h2 class="title is-3 is-spaced">Show me some results!</h2>
+        <span class="dnerf">First row:</span> Comparison between input image and our super-resolved result.<br>
+        <span class="dnerf">Second row:</span> Comparison between a SOTA competitor (MSIT) and ours.
+
       </div>
     </div>
   </div>
@@ -475,15 +472,10 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">How it works</h2>
         <div class="content has-text-justified">
           <p>
-            Recent approaches to arbitrary-scale single image super-resolution (ASR) use neural fields to represent continuous signals that can be sampled at arbitrary resolutions.
-            However, point-wise queries of neural fields do not naturally match the point spread function (PSF) of pixels, which may cause aliasing in the super-resolved image.
-            Existing methods attempt to mitigate this by approximating an integral version of the field at each scaling factor, compromising both fidelity and generalization.
-            In this work, we introduce neural heat fields, a novel neural field formulation that inherently models a physically exact PSF. Our formulation enables analytically correct anti-aliasing at any desired output resolution, and - unlike supersampling - at no additional cost.
-            Building on this foundation, we propose \thera{}, an end-to-end ASR method that substantially outperforms existing approaches,
-            while being more parameter-efficient and offering strong theoretical guarantees.
+            A hypernetwork estimates parameters $\{\mathbf{b}_1, \mathbf{W}_2\}^{(i,j)}$ of pixel-wise, local neural heat fields. The phase shifts $\mathbf{b}_1$ operate on globally learned components, before thermal activations scale each component depending on their frequency and the desired scaling factor. The components are then linearly combined using coefficients $\mathbf{W}_2$, resulting in an appropriately-blurred, continuous local neural field. This field is then rasterized at the appropriate sampling rate (resolution) to yield a part of the final output image (red square). Unlike previous methods, correct anti-aliasing is guaranteed by design!
           </p>
           <p>
             <img id="method_train" width="100%" src="./static/imgs/method.png" alt="Thera method"
@@ -503,13 +495,16 @@
     <!-- Paper results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths" style="width: 100%;">
-        <h2 class="title is-3">Results</h2>
+        <h2 class="title is-3">Quantitative comparison</h2>
         <div class="content has-text-justified">
           <p>
-            Our Thera framework achieves state-of-the-art performance on a variety of super-resolution benchmarks.
+            Due to its principled observation model, our method achieves state-of-the-art performance on a variety of super-resolution benchmarks.
           </p>
           <div class="publication-results">
             <img id="method_train" width="100%" src="./static/imgs/results.png" alt="Thera results scheme"/>
+          </div>
+          <div class="publication-results">
+            <img id="method_train" width="100%" src="./static/imgs/results_bench.png" alt="Thera results scheme"/>
           </div>
       </div>
     </div>
@@ -572,7 +567,7 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            Thanks for the template <a href="https://nerfies.github.io/">Nerfies</a>.
+            Website template based on <a href="https://nerfies.github.io/">Nerfies</a>.
           </p>
         </div>
       </div>

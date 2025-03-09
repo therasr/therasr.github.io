@@ -325,3 +325,11 @@ body {
     max-width: 300px; /* or any desired width */
     height: auto; /* keep aspect ratio */
 }
+
+.author-block-footer {
+    font-size: 1em !important;
+}
+
+.navbar {
+    visibility: hidden !important;
+}
