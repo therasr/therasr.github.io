@@ -163,7 +163,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img id="method_train" width="100%" src="./static/imgs/teaser.png" alt="Overview of the Thera method for aliasing-free super-resolution"/>
+      <img id="method_train" width="100%" src="./static/imgs/teaser.svg" alt="Overview of the Thera method for aliasing-free super-resolution"/>
       <h2 class="subtitle has-text-centered">
           <span class="dnerf">Thera</span> is the first arbitrary-scale super-resolution method with a built-in physical observation model.
       </h2>
@@ -464,7 +464,7 @@
             A hypernetwork estimates parameters $\{\mathbf{b}_1, \mathbf{W}_2\}^{(i,j)}$ of pixel-wise, local neural heat fields. The phase shifts $\mathbf{b}_1$ operate on globally learned components, before thermal activations scale each component depending on their frequency and the desired scaling factor. The components are then linearly combined using coefficients $\mathbf{W}_2$, resulting in an appropriately-blurred, continuous local neural field. This field is then rasterized at the appropriate sampling rate (resolution) to yield a part of the final output image (red square). Unlike previous methods, correct anti-aliasing is guaranteed by design!
           </p>
           <p>
-            <img id="method_train" width="100%" src="./static/imgs/method.png" alt="Thera method"
+            <img id="method_train" width="100%" src="./static/imgs/method.svg" alt="Thera method"
             style="margin-top: 2em; margin-bottom: 2em;/>
           </p>
         </div>
